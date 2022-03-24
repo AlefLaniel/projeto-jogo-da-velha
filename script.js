@@ -37,8 +37,8 @@ function reset() {
     }
     playing = true;
 
-    document.querySelector('.jogador1 img').setAttribute('src', '/images/pessoa.png');
-    document.querySelector('.jogador2 img').setAttribute('src', '/images/pessoa.png');
+    document.querySelector('.jogador1 img').setAttribute('src', './images/pessoa.png');
+    document.querySelector('.jogador2 img').setAttribute('src', './images/pessoa.png');
     renderSquare();
     renderInfo();
     removeanimationW();
@@ -58,13 +58,13 @@ function renderInfo() {
     document.querySelector('.resultado').innerHTML = warning;
     
     if (player === 'x') {
-        document.querySelector('.jogador2 img').setAttribute('src', '/images/esperando.png');
-        document.querySelector('.jogador1 img').setAttribute('src', '/images/pessoa.png');
+        document.querySelector('.jogador2 img').setAttribute('src', './images/esperando.png');
+        document.querySelector('.jogador1 img').setAttribute('src', './images/pessoa.png');
         checkGame();
     }
     if(player === 'o'){
-        document.querySelector('.jogador1 img').setAttribute('src', '/images/esperando.png');
-        document.querySelector('.jogador2 img').setAttribute('src', '/images/pessoa.png');
+        document.querySelector('.jogador1 img').setAttribute('src', './images/esperando.png');
+        document.querySelector('.jogador2 img').setAttribute('src', './images/pessoa.png');
         checkGame();
     }
 }
@@ -78,20 +78,20 @@ function checkGame() {
     if (checkWinnerFor('x')) {
         warning = 'O "x" venceu';
         playing = false;
-        document.querySelector('.jogador1 img').setAttribute('src', '/images/ganhou.png');
-        document.querySelector('.jogador2 img').setAttribute('src', '/images/perdeu.png');
+        document.querySelector('.jogador1 img').setAttribute('src', './images/ganhou.png');
+        document.querySelector('.jogador2 img').setAttribute('src', './images/perdeu.png');
         animationWin()
     }else if (checkWinnerFor('o')) {
         warning = 'O "o" venceu';
         playing = false; 
-        document.querySelector('.jogador1 img').setAttribute('src', '/images/perdeu.png');
-        document.querySelector('.jogador2 img').setAttribute('src', '/images/ganhou.png');
+        document.querySelector('.jogador1 img').setAttribute('src', './images/perdeu.png');
+        document.querySelector('.jogador2 img').setAttribute('src', './images/ganhou.png');
         animationWin();
     }else if (isFull()) {
         warning = 'Deu empate';
         playing = false;
-        document.querySelector('.jogador1 img').setAttribute('src', '/images/pessoa.png');
-        document.querySelector('.jogador2 img').setAttribute('src', '/images/pessoa.png');
+        document.querySelector('.jogador1 img').setAttribute('src', './images/pessoa.png');
+        document.querySelector('.jogador2 img').setAttribute('src', './images/pessoa.png');
         animationWin()
     }
 }
