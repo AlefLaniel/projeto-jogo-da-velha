@@ -39,6 +39,7 @@ function reset() {
 
     document.querySelector('.jogador1 img').setAttribute('src', './images/pessoa.png');
     document.querySelector('.jogador2 img').setAttribute('src', './images/pessoa.png');
+    document.querySelector('.jogador').setAttribute('style', 'display: block');
     renderSquare();
     renderInfo();
     removeanimationW();
@@ -60,11 +61,13 @@ function renderInfo() {
     if (player === 'x') {
         document.querySelector('.jogador2 img').setAttribute('src', './images/esperando.png');
         document.querySelector('.jogador1 img').setAttribute('src', './images/pessoa.png');
+        document.querySelector('.vencedor').setAttribute('style', 'display: none');
         checkGame();
     }
     if(player === 'o'){
         document.querySelector('.jogador1 img').setAttribute('src', './images/esperando.png');
         document.querySelector('.jogador2 img').setAttribute('src', './images/pessoa.png');
+        document.querySelector('.vencedor').setAttribute('style', 'display: none');
         checkGame();
     }
 }
@@ -81,18 +84,23 @@ function checkGame() {
         document.querySelector('.jogador1 img').setAttribute('src', './images/ganhou.png');
         document.querySelector('.jogador2 img').setAttribute('src', './images/perdeu.png');
         animationWin()
+        document.querySelector('.jogador').setAttribute('style', 'display: none');
+        document.querySelector('.vencedor').setAttribute('style', 'display: block');
     }else if (checkWinnerFor('o')) {
         warning = 'O "o" venceu';
         playing = false; 
         document.querySelector('.jogador1 img').setAttribute('src', './images/perdeu.png');
         document.querySelector('.jogador2 img').setAttribute('src', './images/ganhou.png');
         animationWin();
+        document.querySelector('.jogador').setAttribute('style', 'display: none');
+        document.querySelector('.vencedor').setAttribute('style', 'display: block');
     }else if (isFull()) {
         warning = 'Deu empate';
         playing = false;
         document.querySelector('.jogador1 img').setAttribute('src', './images/pessoa.png');
         document.querySelector('.jogador2 img').setAttribute('src', './images/pessoa.png');
         animationWin()
+        document.querySelector('.jogador').setAttribute('style', 'display: none');
     }
 }
 
